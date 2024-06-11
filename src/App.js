@@ -1,11 +1,11 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { Routes, Route} from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 // import { HomeIndex } from "./pages/HomeIndex"
 // import { Hello } from "./pages/Hello"
 // import { MenuIndex } from "./pages/MenuIndex"
-import BgVideo from "./videos/BGvideo.mp4"
+// import BgVideo from "./videos/BGvideo.mp4"
 import PageNotFound from "./pages/NotFound"
 import { BGcomponent } from './components/bgcomponent';
 import { HomeEng } from "./pages/Home"
@@ -13,7 +13,7 @@ import { HomeMY } from "./pages/HomeMY"
 import { MenuComponent } from './components/menucomponent';
 import { MenuEng } from "./pages/MenuEng"
 import { MenuMy } from './pages/MenuMy';
-import { Level1Eng } from "./pages/Level1Eng";
+// import { Level1Eng } from "./pages/Level1Eng";
 import { Level1My } from "./pages/Level1My"
 
 import { Level2MenuEng } from "./leveltwo/Level2MenuEng";
@@ -37,8 +37,8 @@ import Level4Quiz from "./levelfour/Level4Eng";
 import Level4Kuiz from './levelfour/Level4My';
 
 import LevelOne from "./handsign-levelone/pages/levelone";  //level one
-import Mody from './handsign-levelone/pages/gesture';
-import OneFinal from "./handsign-levelone/pages/level-one-final";
+// import Mody from './handsign-levelone/pages/gesture';
+// import OneFinal from "./handsign-levelone/pages/level-one-final";
 
 import Countdown from './playground/f_playground';
 

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react"
-import * as tf from "@tensorflow/tfjs"
+// import * as tf from "@tensorflow/tfjs"
 import * as handpose from "@tensorflow-models/handpose"
 import Webcam from "react-webcam"
 import { drawHand } from "./resources/utils"
@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react'
 
 import { RiCameraFill, RiCameraOffFill } from "react-icons/ri"
-import thumbs_up from "./thumbs_up.png"
+// import thumbs_up from "./thumbs_up.png"
 
 // import aSign from "./resources/handsign/A"
 // import bSign from "./resources/handsign/B"

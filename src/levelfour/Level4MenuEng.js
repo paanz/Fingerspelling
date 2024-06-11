@@ -8,11 +8,11 @@ import {
   Container,
   Text,
   Button,
-  Stack,
-  Icon,
-  useColorModeValue,
-  createIcon,
-  Fade,
+//   Stack,
+//   Icon,
+//   useColorModeValue,
+//   createIcon,
+//   Fade,
   useDisclosure,
   ScaleFade
 } from '@chakra-ui/react';

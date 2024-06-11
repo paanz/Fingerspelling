@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom"
 import imageBackground from "../images/menuImages/menuBackground.png"
 import { 
      Image,
-     Text
 } from "@chakra-ui/react"
 import "../styles/homePage.css"
 
