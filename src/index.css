@@ -11,3 +11,82 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Valorax";
+  src: local("Valorax"),
+    url("./fonts/Valorax.otf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "VeniteAdoremusItalic";
+  src: local("VeniteAdoremusItalic"),
+    url("./fonts/VeniteAdoremusItalic.ttf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "VeniteAdoremusStraight";
+  src: local("VeniteAdoremusStraight"),
+    url("./fonts/VeniteAdoremusStraight.ttf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "SF Atarian System Bold Italic";
+  src: local("AtarianBoldItalic"),
+       url("./fonts/Atarian/SFAtarianSystemBoldItalic.ttf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "SF Atarian System Bold";
+  src: local("AtarianBold"),
+       url("./fonts/Atarian/SF\ Atarian\ System\ Bold.ttf") format("truetype");
+       font-weight: normal;
+}
+
+@font-face {
+  font-family: "SF Atarian System Extended Bold Italic";
+  src: local("AtarianExtendedBoldItalic"),
+       url("./fonts/Atarian/SF\ Atarian\ System\ Extended\ Bold\ Italic.ttf") format("truetype");
+       font-weight: normal;
+}
+
+@font-face {
+  font-family: "SF Atarian System Extended Bold";
+  src: local("AtarianExtendedBold"),
+       url("./fonts/Atarian/SF\ Atarian\ System\ Extended\ Bold.ttf") format("truetype");
+       font-weight: normal;
+}
+
+@font-face {
+  font-family: "SF Atarian System Extended Italic";
+  src: local("AtarianExtendedItalic"),
+       url("./fonts/Atarian/SF\ Atarian\ System\ Extended\ Italic.ttf") format("truetype");
+       font-weight: normal;
+}
+
+@font-face {
+  font-family: "SF Atarian System Extended";
+  src: local("AtarianExtended"),
+       url("./fonts/Atarian/SF\ Atarian\ System\ Extended.ttf") format("truetype");
+       font-weight: normal;
+}
+
+@font-face {
+  font-family: "SF Atarian System Italic";
+  src: local("AtarianItalic"),
+       url("./fonts/Atarian/SF\ Atarian\ System\ Italic.ttf") format("truetype");
+       font-weight: normal;
+}
+
+@font-face {
+  font-family: "SF Atarian System";
+  src: local("AtarianSystem"),
+       url("./fonts/Atarian/SF\ Atarian\ System.ttf") format("truetype");
+       font-weight: normal;
+}
+
+
