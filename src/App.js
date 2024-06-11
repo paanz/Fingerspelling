@@ -15,13 +15,11 @@ import { MenuEng } from "./pages/MenuEng"
 import { MenuMy } from './pages/MenuMy';
 import { Level1Eng } from "./pages/Level1Eng";
 import { Level1My } from "./pages/Level1My"
-// import Home from "./handsign-tensorflow-prototype/pages/index"
 
 import { Level2MenuEng } from "./leveltwo/Level2MenuEng";
 import { Level2MenuMy } from "./leveltwo/Level2MenuMy";
 import Quiz from "./leveltwo/Level2Eng";
 import Kuiz from './leveltwo/Level2My';
-import Test from "./handsign-levelone_two/test";
 import { QuizComponent } from './components/quizComponent';
 
 import { Level3Eng } from './levelthree/Level3Eng';
@@ -41,7 +39,6 @@ import Level4Kuiz from './levelfour/Level4My';
 import LevelOne from "./handsign-levelone/pages/levelone";  //level one
 import Mody from './handsign-levelone/pages/gesture';
 import OneFinal from "./handsign-levelone/pages/level-one-final";
-import LevelOneTwo from './handsign-levelone/pages/levelone_two';
 
 import Countdown from './playground/f_playground';
 
