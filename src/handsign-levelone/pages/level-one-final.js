@@ -16,7 +16,7 @@ import {
     Button,
 } from '@chakra-ui/react'
 
-import { RiCameraFill, RiCameraOffFill } from "react-icons/ri"
+import { RiCameraFill, RiCameraOffFill, RiHome3Line } from "react-icons/ri"
 // import thumbs_up from "./thumbs_up.png"
 
 // import aSign from "./resources/handsign/A"
@@ -377,6 +377,14 @@ function OneFinal() {
                 colorScheme="orange"
             >
                 Camera
+            </Button>
+            <Button
+                leftIcon={
+                    <RiHome3Line size={20}/>
+                }
+                colorScheme="orange"
+            >
+                Back
             </Button>
             {/* <About /> */}
             </Stack>

@@ -207,7 +207,7 @@ function Level4Kuiz() {
           </Grid>
           <Container centerContent p={8} position={'flex'}>
             <Link to="/menu/my"><Button>Kembali ke Menu Utama</Button></Link>
-            <Link to="/levelfour/myquiz"><Button>Cuba Lagi!</Button></Link>
+            <Link to="/levelfour/my"><Button>Cuba Lagi!</Button></Link>
           </Container>
         </div>
       ) : (

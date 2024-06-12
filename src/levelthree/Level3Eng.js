@@ -61,9 +61,9 @@ import image_tidak_boleh from "../phrasesData/image_tidak_boleh.jpg";
 import vid_tidak_boleh from "../phrasesData/vid_tidak_boleh.mp4";
 
 const LinkItems = [
-  { name: 'General', icon: FiHome, subItems: [{ label: 'Numbers', link: '/levelthree/numbers' }, { label: 'Colours', link: '/levelthree/colours' }] },
-  { name: 'Things', icon: FiTrendingUp, subItems: [{ label: 'Objects', link: '/levelthree/objects' }, { label: 'Clothing', link: '/levelthree/clothing' }] },
-  { name: 'Places', icon: FiCompass, subItems: [{ label: 'Direction', link: '/levelthree/direction' }, { label: 'Transportation', link: '/levelthree/transportation' }] },
+  { name: 'General (Umum)', icon: FiHome, subItems: [{label: 'Daily (Harian)', link: '/levelthree'}, { label: 'Numbers (Nombor)', link: '/levelthree/numbers' }, { label: 'Colours (Warna)', link: '/levelthree/colours' }] },
+  { name: 'Things (Benda)', icon: FiTrendingUp, subItems: [{ label: 'Objects (Objek)', link: '/levelthree/objects' }, { label: 'Clothing (Pakaian)', link: '/levelthree/clothing' }] },
+  { name: 'Places (Tempat)', icon: FiCompass, subItems: [{ label: 'Direction (Arah)', link: '/levelthree/direction' }, { label: 'Transportation (Pengangkutan)', link: '/levelthree/transportation' }] },
 ];
 
 const SidebarComponent = ({ children }) => {
@@ -95,8 +95,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          MSL / BIM
+        <Text fontSize="xl" fontFamily="monospace" fontWeight="bold">
+          Sign Language - Bahasa Isyarat
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -108,6 +108,11 @@ const SidebarContent = ({ onClose, ...rest }) => {
       <Link to="/menu">
         <Button mt={10}>
           Return to Main Menu
+        </Button>
+      </Link>
+      <Link to="/menu/my">
+        <Button mt={2}>
+          Pulang ke Menu Utama
         </Button>
       </Link>
     </Box>
@@ -191,7 +196,7 @@ export function Level3Eng() {
       <SidebarComponent>
 
         <Heading textAlign="center" fontSize={{ base: 'xl', sm: '3xl', md: '5xl' }} paddingBottom="1vh" fontFamily="VeniteAdoremusStraight" style={{ letterSpacing: 3 }}>
-          Phrase Learning
+          Phrase Learning (Belajar Frasa)
         </Heading>
 
         <Box maxW="99%" mx="auto" backgroundColor="#DFDFDF" borderRadius="1.5em" p={4}>
@@ -208,7 +213,7 @@ export function Level3Eng() {
                       ({sign.nameMY})
                     </Text>
                     <Link onClick={() => openModal(sign.videoUrl)} _hover={{ textDecoration: 'underline', color: 'blue' }}>
-                      Watch demonstration
+                      Watch demo / Lihat demo
                     </Link>
                   </VStack>
                 </HStack>
@@ -237,7 +242,7 @@ export function Level3Eng() {
         </Box>
 
         <Heading paddingTop={10} textAlign="center" fontSize={{ base: 'xl', sm: '3xl', md: '5xl' }} fontFamily="VeniteAdoremusStraight" paddingBottom="1vh">
-          Helping Words
+          Helping Words (Kata Bantu)
         </Heading>
 
         <Box maxW="99%" mx="auto" backgroundColor="#DFDFDF" borderRadius="1.5em" p={4}>
@@ -253,8 +258,11 @@ export function Level3Eng() {
                     <Text mt={2} fontSize="xl" fontWeight="bold" fontFamily="SF Atarian System" style={{ letterSpacing: 3 }}>
                       ({sign.nameMY})
                     </Text>
-                    <Link onClick={() => openModal(sign.videoUrl)} _hover={{ textDecoration: 'underline', color: 'blue' }}>
-                      Watch demonstration
+                    <Link 
+                      onClick={() => openModal(sign.videoUrl)} 
+                      _hover={{ textDecoration: 'underline', color: 'blue' }}
+                      >
+                        Watch demo / Lihat demo
                     </Link>
                   </VStack>
                 </HStack>

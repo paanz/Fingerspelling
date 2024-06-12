@@ -58,7 +58,7 @@ export function Level4MenuMy() {
                               color='#CACC90' 
                               fontFamily={"SF Atarian System Extended"}
                               >
-                         Sedia untuk uji pengetahuan Bahasa Isyarat Malaysia anda!
+                         Sedia untuk uji pengetahuan Bahasa Isyarat anda!
                          </Heading>
                     </ScaleFade>
                     <ScaleFade in={true} delay={0.6}>

@@ -4,6 +4,7 @@ import * as handpose from "@tensorflow-models/handpose";
 import Webcam from "react-webcam";
 import { drawHand } from "./resources/utils";
 import * as fp from "fingerpose";
+import { Link } from "react-router-dom";
 import {
   Box,
   Container,
@@ -16,7 +17,7 @@ import {
   Grid,
   GridItem,
 } from "@chakra-ui/react";
-import { RiCameraFill, RiCameraOffFill } from "react-icons/ri";
+import { RiCameraFill, RiCameraOffFill, RiHome3Line } from "react-icons/ri";
 import Handsigns from "./resources/handsign";
 import { Signimage, Signpass } from "./resources/handimages";
 import "./resources/App.css";
@@ -324,6 +325,26 @@ function LevelOne() {
           >
             Camera
           </Button>
+          <Link to="/menu">
+            <Button
+                  leftIcon={
+                      <RiHome3Line size={20}/>
+                  }
+                  colorScheme="orange"
+            >
+              Back (ENG)
+            </Button>
+          </Link>
+          <Link to="/menu/my">
+            <Button
+                  leftIcon={
+                      <RiHome3Line size={20}/>
+                  }
+                  colorScheme="orange"
+            >
+              Pulang (MY)
+            </Button>
+          </Link>
         </Stack>
       </Container>
     </Box>

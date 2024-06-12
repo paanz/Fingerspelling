@@ -104,9 +104,9 @@ import vid1000000 from "../phrasesData/page_numbers/1000000.mp4";
 
 
 const LinkItems = [
-  { name: 'General', icon: FiHome, subItems: [{ label: 'Numbers', link: '/levelthree/numbers' }, { label: 'Colours', link: '/levelthree/colours' }] },
-  { name: 'Things', icon: FiTrendingUp, subItems: [{ label: 'Objects', link: '/levelthree/objects' }, { label: 'Clothing', link: '/levelthree/clothing' }] },
-  { name: 'Places', icon: FiCompass, subItems: [{ label: 'Direction', link: '/levelthree/direction' }, { label: 'Transportation', link: '/levelthree/transportation' }] },
+  { name: 'General (Umum)', icon: FiHome, subItems: [{label: 'Daily (Harian)', link: '/levelthree'}, { label: 'Numbers (Nombor)', link: '/levelthree/numbers' }, { label: 'Colours (Warna)', link: '/levelthree/colours' }] },
+  { name: 'Things (Benda)', icon: FiTrendingUp, subItems: [{ label: 'Objects (Objek)', link: '/levelthree/objects' }, { label: 'Clothing (Pakaian)', link: '/levelthree/clothing' }] },
+  { name: 'Places (Tempat)', icon: FiCompass, subItems: [{ label: 'Direction (Arah)', link: '/levelthree/direction' }, { label: 'Transportation (Pengangkutan)', link: '/levelthree/transportation' }] },
 ];
 
 const SidebarComponent = ({ children }) => {
@@ -123,14 +123,6 @@ const SidebarComponent = ({ children }) => {
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>
-      <Link to="/menu">
-          <Button style={{
-            position: "fixed",
-            zIndex: "9"
-          }}>
-            Return to Main Menu
-          </Button>
-        </Link>
     </Box>
   );
 };
@@ -146,8 +138,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
+        <Text fontSize="xl" fontFamily="monospace" fontWeight="bold">
+        Sign Language - Bahasa Isyarat
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -156,9 +148,14 @@ const SidebarContent = ({ onClose, ...rest }) => {
           {link.name}
         </NavItem>
       ))}
-            <Link to="/menu">
+      <Link to="/menu">
         <Button mt={10}>
           Return to Main Menu
+        </Button>
+      </Link>
+      <Link to="/menu/my">
+        <Button mt={2}>
+          Pulang ke Menu Utama
         </Button>
       </Link>
     </Box>
@@ -258,7 +255,7 @@ export function PageNumbers() {
       <SidebarComponent>
 
         <Heading textAlign="center" fontSize={    { base: 'xl', sm: '3xl', md: '5xl' }} paddingBottom="1vh" fontFamily="VeniteAdoremusStraight" style={{ letterSpacing: 3 }}>
-          Numbers
+          Numbers (Nombor)
         </Heading>
 
         <Box maxW="99%" mx="auto" backgroundColor="#DFDFDF" borderRadius="1.5em" p={4}>        
@@ -275,7 +272,7 @@ export function PageNumbers() {
                       ({sign.nameMY})
                     </Text>
                     <Link onClick={() => openModal(sign.videoUrl)} _hover={{ textDecoration: 'underline', color: 'blue' }}>
-                      Watch demonstration
+                    Watch demo / Lihat demo
                     </Link>
                   </VStack>
                 </HStack>
