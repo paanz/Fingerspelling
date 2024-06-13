@@ -179,22 +179,25 @@ function LevelOne() {
   }
 
   return (
-    <Box bgColor="#5784BA">
-      <Container centerContent maxW="90vw" height="100vh" pt="0" pb="0">
-        <Box h="20px">
+    <Box bgColor="#5784BA" minHeight="100vh" display="flex" flexDirection="column">
+      <Container centerContent maxW="100vw" p="0" flex="1" display="flex" flexDirection="column">
+        <Box h="20px" mt="20px">
           <Heading
             as="h3"
             size="md"
             className="tutor-text"
             color="white"
             textAlign="center"
+            mb={2}
           ></Heading>
           <Heading
             as="h3"
             size="md"
             color="white"
-            textAlign="center">
-          (Buat isyarat tangan berdasarkan huruf yang ditunjukkan di bawah)
+            textAlign="center"
+            mb={4}
+          >
+            (Buat isyarat tangan berdasarkan huruf yang ditunjukkan di bawah)
           </Heading>
         </Box>
 
@@ -204,49 +207,40 @@ function LevelOne() {
           id="app-title"
           color="white"
           textAlign="center"
+          mb={4}
         >
-          Loading Handsigns... / Memuatkan Isyarat Tangan...
+          Please wait... / Tunggu seketika...
         </Heading>
 
-        <Grid templateColumns="repeat(2, 1fr)" gap={2}>
-          <GridItem colSpan={1}>
+        <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={4} flex="1">
+          <GridItem colSpan={1} display="flex" justifyContent="center" alignItems="center">
             <Image
               src={BIM_Image}
               style={{
-                position: "relative",
-                width: 720,
-                height: 480,
+                width: "100%",
+                maxWidth: "500px",
+                height: "auto",
               }}
             />
           </GridItem>
-          <GridItem colSpan={1}>
-            <Box position="relative" width="640px" height="480px">
+          <GridItem colSpan={1} display="flex" justifyContent="center" alignItems="center">
+            <Box position="relative" width="100%" maxWidth="500px" height="auto">
               {camState === "on" ? (
                 <>
                   <Webcam
                     ref={webcamRef}
                     style={{
-                      position: "absolute",
-                      left: 0,
-                      right: 0,
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                      textAlign: "center",
-                      zIndex: 8,
+                      position: "relative",
                       width: "100%",
-                      height: "100%",
+                      height: "auto",
                     }}
                   />
                   <canvas
                     ref={canvasRef}
                     style={{
                       position: "absolute",
+                      top: 0,
                       left: 0,
-                      right: 0,
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                      textAlign: "center",
-                      zIndex: 9,
                       width: "100%",
                       height: "100%",
                     }}
@@ -259,19 +253,19 @@ function LevelOne() {
           </GridItem>
         </Grid>
 
-        <Box>
+        <Box mt={4}>
           {emoji !== null ? (
             <div>
-              <Text color="white" fontSize="sm" mb={1}>
-                Detected Gestures / Isyarat yang Dikesan
+              <Text color="white" fontSize="lg" mb={1} textAlign="center">
+                Detected Gestures / Isyarat yang Dikesan:
               </Text>
-              <img
+              <Image
                 alt="signImage"
                 src={Signimage[emoji]}
+                marginLeft="auto"
+                marginRight="auto"
                 style={{
-                  position: "absolute",
-                  height: 30,
-                  zIndex: 9,
+                  height: 70,
                 }}
               />
             </div>
@@ -292,13 +286,14 @@ function LevelOne() {
         ></Box>
 
         <Image
-          h="150px"
+          h={{ base: "200px", md: "150px" }}
           objectFit="cover"
           id="emojimage"
           style={{
-            position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
+            position: "relative",
+            left: "50%",
+            transform: "translateX(-50%)",
+            marginTop: "20px",
           }}
         />
 
@@ -307,10 +302,12 @@ function LevelOne() {
           spacing={4}
           direction="row"
           align="center"
-          position="fixed"
+          position="relative"
           bottom="20px"
           width="100%"
           justifyContent="center"
+          mt="auto"
+          mb="20px"
         >
           <Button
             leftIcon={
@@ -327,20 +324,16 @@ function LevelOne() {
           </Button>
           <Link to="/menu">
             <Button
-                  leftIcon={
-                      <RiHome3Line size={20}/>
-                  }
-                  colorScheme="orange"
+              leftIcon={<RiHome3Line size={20} />}
+              colorScheme="orange"
             >
               Back (ENG)
             </Button>
           </Link>
           <Link to="/menu/my">
             <Button
-                  leftIcon={
-                      <RiHome3Line size={20}/>
-                  }
-                  colorScheme="orange"
+              leftIcon={<RiHome3Line size={20} />}
+              colorScheme="orange"
             >
               Pulang (MY)
             </Button>
