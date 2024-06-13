@@ -25,7 +25,10 @@ export function Level2MenuEng() {
   }, [onToggle]);
 
   return (
-     <div className='main'>
+     <div className='main' style={{
+          height: '100vh',
+          overflow: 'hidden'
+        }}>
           <Container 
                maxW='2xl' 
                centerContent p={8} 

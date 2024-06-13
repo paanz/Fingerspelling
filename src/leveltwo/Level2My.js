@@ -160,116 +160,121 @@ function Kuiz() {
   // console.log(current.imageUrl); // Debug current question's image URL
 
   return (
-    <div>
-      {showResults ? (
-        <div className="results">
-          <Text
-            fontFamily={"VeniteAdoremusStraight"}
-            color="white"
-            fontSize="2xl"
-            letterSpacing="1px"
-          >
-            Keputusan Kuiz
-          </Text>
-          <Text
-            fontFamily={"VeniteAdoremusStraight"}
-            color="white"
-            fontSize="2xl"
-            letterSpacing="3px"
-            fontWeight="normal"
-          >
-            ~ Markah anda: {score} / {(questions.length * 10) + (questions.length * 10 - 10)} ~
-          </Text>
-          <Grid templateColumns="repeat(2, 1fr)" gap={6}>
-            {sortedUserAnswers.map((response, index) => (
-              <GridItem w="100%" key={index}>
-                <Box
-                  p={5} shadow="md"
-                  borderWidth="1px"
-                  borderRadius="md"
-                  bg={response.isCorrect ? "green.100" : "red.100"}
-                >
-                  {console.log(response.imageUrl)} {/* Debug image URL in results */}
-                  <Image
-                    src={response.imageUrl}
-                    alt="Question visual content"
-                    className="result-image"
-                  />
-                  <Text
-                    // fontWeight="bold"
+    <>
+      <div style={{
+        height: '100vh',
+        overflow: 'hidden',
+      }}>
+        {showResults ? (
+          <div className="results">
+            <Text
+              fontFamily={"VeniteAdoremusStraight"}
+              color="white"
+              fontSize="2xl"
+              letterSpacing="1px"
+            >
+              Keputusan Kuiz
+            </Text>
+            <Text
+              fontFamily={"VeniteAdoremusStraight"}
+              color="white"
+              fontSize="2xl"
+              letterSpacing="3px"
+              fontWeight="normal"
+            >
+              ~ Markah anda: {score} / {(questions.length * 10) + (questions.length * 10 - 10)} ~
+            </Text>
+            <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+              {sortedUserAnswers.map((response, index) => (
+                <GridItem w="100%" key={index}>
+                  <Box
+                    p={5} shadow="md"
+                    borderWidth="1px"
+                    borderRadius="md"
+                    bg={response.isCorrect ? "green.100" : "red.100"}
                   >
-                    Q: Huruf apa yang ditunjukkan oleh tanda isyarat ini?
-                  </Text>
-                  <Text
-                    fontWeight="bold">
-                    Jawapan: {response.userAnswer} {response.isCorrect ? '✅' : '❌'}
-                  </Text>
-                  {!response.isCorrect && (
-                    <Text fontWeight="bold" className="correct-answer">Jawapan betul: {response.correctAnswer}</Text>
-                  )}
-                </Box>
-              </GridItem>
-            ))}
-          </Grid>
-          <Container centerContent p={8} position={'flex'}>
-            <Link to="/menu/my"><Button>Kembali ke Menu Utama</Button></Link>
-            <Link to="/leveltwo/my"><Button>Cuba Lagi!</Button></Link>
-          </Container>
-        </div>
-      ) : (
-        <div className={`question-container ${active ? 'active' : 'inactive'}`}>
-          <Button
-            disabled={lifelines.fiftyFiftyUsed}
-            onClick={handleFiftyFifty}
-            style={{ backgroundColor: lifelines.fiftyFiftyUsed ? 'grey' : 'gold' }}
-            fontFamily={'SF Atarian System Extended Italic'}>
-            Gunakan Talian Hayat 50/50
-          </Button>
-          <Button
-            disabled={lifelines.secondChanceUsed}
-            onClick={handleSecondChance}
-            style={{ backgroundColor: lifelines.secondChanceUsed ? 'grey' : 'gold' }}
-            fontFamily={'SF Atarian System Extended Italic'}>
-            Aktifkan Peluang Kedua
-          </Button>
-          <div>
-            <HStack>
-              {questions[currentQuestion].imageUrl && (
-                <Image
-                  src={questions[currentQuestion].imageUrl}
-                  alt="Quiz Visual Content"
-                  className="quiz-image"
-                />
-              )}
-              {questions[currentQuestion].videoUrl && (
-                <video
-                  src={questions[currentQuestion].videoUrl}
-                  alt="Quiz Video Content"
-                  className="quiz-video"
-                  autoPlay loop muted
-                />
-              )}
-            </HStack>
-            <h1 fontFamily={'SF Atarian System Extended'}>
-              {questions[currentQuestion].questionMY}
-            </h1>
-            {questions[currentQuestion].options.map((option, index) => (
-              <Button
-              key={index}
-              onClick={() => handleAnswerOptionClick(option)}
-              disabled={optionsDisabled.includes(option)}
-              className="answer-option-leveltwo"
-              style={{ color: "white", backgroundColor: optionsDisabled.includes(option) ? 'grey' : 'teal' }}
-                >
-                {option}
-              </Button>
-            ))}
+                    {console.log(response.imageUrl)} {/* Debug image URL in results */}
+                    <Image
+                      src={response.imageUrl}
+                      alt="Question visual content"
+                      className="result-image"
+                    />
+                    <Text
+                      // fontWeight="bold"
+                    >
+                      Q: Huruf apa yang ditunjukkan oleh tanda isyarat ini?
+                    </Text>
+                    <Text
+                      fontWeight="bold">
+                      Jawapan: {response.userAnswer} {response.isCorrect ? '✅' : '❌'}
+                    </Text>
+                    {!response.isCorrect && (
+                      <Text fontWeight="bold" className="correct-answer">Jawapan betul: {response.correctAnswer}</Text>
+                    )}
+                  </Box>
+                </GridItem>
+              ))}
+            </Grid>
+            <Container centerContent p={8} position={'flex'}>
+              <Link to="/menu/my"><Button>Kembali ke Menu Utama</Button></Link>
+              <Link to="/leveltwo/my"><Button>Cuba Lagi!</Button></Link>
+            </Container>
           </div>
-          <p>Skor: {score}</p>
-          <p>Masa Tinggal: {Math.floor(timeLeft / 60)}:{(timeLeft % 60 < 10 ? '0' : '') + (timeLeft % 60)}</p>
-        </div>
-      )}
-    </div>
+        ) : (
+          <div className={`question-container ${active ? 'active' : 'inactive'}`}>
+            <Button
+              disabled={lifelines.fiftyFiftyUsed}
+              onClick={handleFiftyFifty}
+              style={{ backgroundColor: lifelines.fiftyFiftyUsed ? 'grey' : 'gold' }}
+              fontFamily={'SF Atarian System Extended Italic'}>
+              Gunakan Talian Hayat 50/50
+            </Button>
+            <Button
+              disabled={lifelines.secondChanceUsed}
+              onClick={handleSecondChance}
+              style={{ backgroundColor: lifelines.secondChanceUsed ? 'grey' : 'gold' }}
+              fontFamily={'SF Atarian System Extended Italic'}>
+              Aktifkan Peluang Kedua
+            </Button>
+            <div>
+              <HStack>
+                {questions[currentQuestion].imageUrl && (
+                  <Image
+                    src={questions[currentQuestion].imageUrl}
+                    alt="Quiz Visual Content"
+                    className="quiz-image"
+                  />
+                )}
+                {questions[currentQuestion].videoUrl && (
+                  <video
+                    src={questions[currentQuestion].videoUrl}
+                    alt="Quiz Video Content"
+                    className="quiz-video"
+                    autoPlay loop muted
+                  />
+                )}
+              </HStack>
+              <h1 fontFamily={'SF Atarian System Extended'}>
+                {questions[currentQuestion].questionMY}
+              </h1>
+              {questions[currentQuestion].options.map((option, index) => (
+                <Button
+                key={index}
+                onClick={() => handleAnswerOptionClick(option)}
+                disabled={optionsDisabled.includes(option)}
+                className="answer-option-leveltwo"
+                style={{ color: "white", backgroundColor: optionsDisabled.includes(option) ? 'grey' : 'teal' }}
+                  >
+                  {option}
+                </Button>
+              ))}
+            </div>
+            <p>Skor: {score}</p>
+            <p>Masa Tinggal: {Math.floor(timeLeft / 60)}:{(timeLeft % 60 < 10 ? '0' : '') + (timeLeft % 60)}</p>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 

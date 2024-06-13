@@ -179,7 +179,7 @@ function LevelOne() {
   }
 
   return (
-    <Box bgColor="#5784BA" minHeight="100vh" display="flex" flexDirection="column">
+    <Box bgColor="#5784BA" minHeight="100vh" display="flex" flexDirection="column" overflow="hidden">
       <Container centerContent maxW="100vw" p="0" flex="1" display="flex" flexDirection="column">
         <Box h="20px" mt="20px">
           <Heading

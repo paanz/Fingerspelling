@@ -29,7 +29,11 @@ export function HomeEng() {
 
   return (
     <>
-      <div className='main'>
+      <div className='main'
+            style={{
+              height: '100vh',
+              overflow: 'hidden'
+            }}>
         <Container className='homeContainer' maxW={'5xl'} rounded={'90px'}>
           <Stack
             as={Box}

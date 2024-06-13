@@ -29,7 +29,11 @@ export function HomeMY() {
 
   return (
     <>
-    <div>
+    <div className='main'
+                style={{
+                  height: '100vh',
+                  overflow: 'hidden'
+                }}>
         {/* <video className='homeBg' src={BgVideo} autoPlay loop muted /> */}
         {/* <div className='overlay'></div> */}
           <Container className='homeContainer' maxW={'5xl'} rounded={'90px'}>

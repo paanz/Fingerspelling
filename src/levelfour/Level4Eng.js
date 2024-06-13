@@ -158,114 +158,119 @@ function Level4Quiz() {
   }
 
   return (
-    <div>
-      {showResults ? (
-        <div className="results">
-          <Text
-            fontFamily={"VeniteAdoremusStraight"}
-            color="white"
-            fontSize="2xl"
-            letterSpacing="1px"
-          >
-            Quiz Results
-          </Text>
-          <Text
-            fontFamily={"VeniteAdoremusStraight"}
-            color="white"
-            fontSize="2xl"
-            letterSpacing="3px"
-            fontWeight="normal"
-          >
-            ~ Your score: {score} / {(questions.length * 10) + (questions.length * 10 - 10)} ~
-          </Text>
-          <Grid templateColumns="repeat(2, 1fr)" gap={6}>
-            {sortedUserAnswers.map((response, index) => (
-              <GridItem w="100%" key={index}>
-                <Box
-                  p={5} shadow="md"
-                  borderWidth="1px"
-                  borderRadius="md"
-                  bg={response.isCorrect ? "green.100" : "red.100"}
-                >
-                  <Image
-                    src={response.imageUrl}
-                    alt="Question visual content"
-                    className="result-image"
-                  />
-                  <Text>
-                    Q: {response.question}
-                  </Text>
-                  <Text fontWeight="bold">
-                    Your answer: {response.userAnswer} {response.isCorrect ? '✅' : '❌'}
-                  </Text>
-                  {!response.isCorrect && (
-                    <Text fontWeight="bold" className="correct-answer">Correct answer: {response.correctAnswer}</Text>
-                  )}
-                </Box>
-              </GridItem>
-            ))}
-          </Grid>
-          <Container centerContent p={8} position={'flex'}>
-            <Link to="/menu"><Button>Return to Main Menu</Button></Link>
-            <Link to="/levelfour"><Button>Try Again!</Button></Link>
-          </Container>
-        </div>
-      ) : (
-        <div className={`question-container ${active ? 'active' : 'inactive'}`}>
-          <Button
-            disabled={lifelines.fiftyFiftyUsed}
-            onClick={handleFiftyFifty}
-            style={{ backgroundColor: lifelines.fiftyFiftyUsed ? 'grey' : 'gold' }}
-            fontFamily={'SF Atarian System Extended Italic'}>
-            Use 50/50 Lifeline
-          </Button>
-          <Button
-            disabled={lifelines.secondChanceUsed}
-            onClick={handleSecondChance}
-            style={{ backgroundColor: lifelines.secondChanceUsed ? 'grey' : 'gold' }}
-            fontFamily={'SF Atarian System Extended Italic'}>
-            Activate Second Chance
-          </Button>
-          <div>
-            <HStack>
-              {questions[currentQuestion].imageUrl && (
-                <Image
-                  src={questions[currentQuestion].imageUrl}
-                  alt="Quiz Visual Content"
-                  className="quiz-image"
-                />
-              )}
-              {questions[currentQuestion].videoUrl && (
-                <video
-                  src={questions[currentQuestion].videoUrl}
-                  alt="Quiz Video Content"
-                  className="quiz-video"
-                  autoPlay loop muted
-                />
-              )}
-            </HStack>
-            <h1 fontFamily={'SF Atarian System Extended'}>
-              {questions[currentQuestion].question}
-            </h1>
-            <div className="options-container">
-              {questions[currentQuestion].options.map((option, index) => (
-                <Button
-                  key={index}
-                  onClick={() => handleAnswerOptionClick(option)}
-                  disabled={optionsDisabled.includes(option)}
-                  className="answer-option"
-                  style={{ color: "white", backgroundColor: optionsDisabled.includes(option) ? 'grey' : 'teal' }}
-                >
-                  {option}
-                </Button>
+    <>
+      <div style={{
+          height: '100vh',
+          overflow: 'hidden',
+        }}>
+        {showResults ? (
+          <div className="results">
+            <Text
+              fontFamily={"VeniteAdoremusStraight"}
+              color="white"
+              fontSize="2xl"
+              letterSpacing="1px"
+            >
+              Quiz Results
+            </Text>
+            <Text
+              fontFamily={"VeniteAdoremusStraight"}
+              color="white"
+              fontSize="2xl"
+              letterSpacing="3px"
+              fontWeight="normal"
+            >
+              ~ Your score: {score} / {(questions.length * 10) + (questions.length * 10 - 10)} ~
+            </Text>
+            <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+              {sortedUserAnswers.map((response, index) => (
+                <GridItem w="100%" key={index}>
+                  <Box
+                    p={5} shadow="md"
+                    borderWidth="1px"
+                    borderRadius="md"
+                    bg={response.isCorrect ? "green.100" : "red.100"}
+                  >
+                    <Image
+                      src={response.imageUrl}
+                      alt="Question visual content"
+                      className="result-image"
+                    />
+                    <Text>
+                      Q: {response.question}
+                    </Text>
+                    <Text fontWeight="bold">
+                      Your answer: {response.userAnswer} {response.isCorrect ? '✅' : '❌'}
+                    </Text>
+                    {!response.isCorrect && (
+                      <Text fontWeight="bold" className="correct-answer">Correct answer: {response.correctAnswer}</Text>
+                    )}
+                  </Box>
+                </GridItem>
               ))}
-            </div>
+            </Grid>
+            <Container centerContent p={8} position={'flex'}>
+              <Link to="/menu"><Button>Return to Main Menu</Button></Link>
+              <Link to="/levelfour"><Button>Try Again!</Button></Link>
+            </Container>
           </div>
-          <p>Score: {score}</p>
-          <p>Time left: {Math.floor(timeLeft / 60)}:{(timeLeft % 60 < 10 ? '0' : '') + (timeLeft % 60)}</p>
-        </div>
-      )}
-    </div>
+        ) : (
+          <div className={`question-container ${active ? 'active' : 'inactive'}`}>
+            <Button
+              disabled={lifelines.fiftyFiftyUsed}
+              onClick={handleFiftyFifty}
+              style={{ backgroundColor: lifelines.fiftyFiftyUsed ? 'grey' : 'gold' }}
+              fontFamily={'SF Atarian System Extended Italic'}>
+              Use 50/50 Lifeline
+            </Button>
+            <Button
+              disabled={lifelines.secondChanceUsed}
+              onClick={handleSecondChance}
+              style={{ backgroundColor: lifelines.secondChanceUsed ? 'grey' : 'gold' }}
+              fontFamily={'SF Atarian System Extended Italic'}>
+              Activate Second Chance
+            </Button>
+            <div>
+              <HStack>
+                {questions[currentQuestion].imageUrl && (
+                  <Image
+                    src={questions[currentQuestion].imageUrl}
+                    alt="Quiz Visual Content"
+                    className="quiz-image"
+                  />
+                )}
+                {questions[currentQuestion].videoUrl && (
+                  <video
+                    src={questions[currentQuestion].videoUrl}
+                    alt="Quiz Video Content"
+                    className="quiz-video"
+                    autoPlay loop muted
+                  />
+                )}
+              </HStack>
+              <h1 fontFamily={'SF Atarian System Extended'}>
+                {questions[currentQuestion].question}
+              </h1>
+              <div className="options-container">
+                {questions[currentQuestion].options.map((option, index) => (
+                  <Button
+                    key={index}
+                    onClick={() => handleAnswerOptionClick(option)}
+                    disabled={optionsDisabled.includes(option)}
+                    className="answer-option"
+                    style={{ color: "white", backgroundColor: optionsDisabled.includes(option) ? 'grey' : 'teal' }}
+                  >
+                    {option}
+                  </Button>
+                ))}
+              </div>
+            </div>
+            <p>Score: {score}</p>
+            <p>Time left: {Math.floor(timeLeft / 60)}:{(timeLeft % 60 < 10 ? '0' : '') + (timeLeft % 60)}</p>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
