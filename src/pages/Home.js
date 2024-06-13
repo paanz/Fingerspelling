@@ -92,7 +92,7 @@ export function HomeEng() {
             <ModalCloseButton />
             <ModalBody>
               {/* Add your credits text here */}
-              <Text>This web application was develop by Farhan Bin Zurafuddin, a Bachelor of Computer Science (Software Engineering) student for his Final Year Project (FYP) in Universiti Malaysia Sarawak (UNIMAS), 2024.</Text>
+              <Text>This web application was develop by Farhan Bin Zurafuddin, a Bachelor of Computer Science (Software Engineering) student for his Final Year Project (FYP) in Universiti Malaysia Sarawak (UNIMAS), 2024..</Text>
               < br/>
               <Text>Aplikasi web ini dibangunkan oleh Farhan Bin Zurafuddin, seorang pelajar Ijazah Sarjana Muda Sains Komputer (Kejuruteraan Perisian) untuk Projek Tahun Akhir (FYP) beliau di Universiti Malaysia Sarawak (UNIMAS), 2024.</Text>
             </ModalBody>
