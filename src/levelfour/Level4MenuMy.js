@@ -28,7 +28,7 @@ export function Level4MenuMy() {
      <div className='main' 
           style={{
           height: '100vh',
-          overflow: 'hidden',
+          overflow: 'scroll',
         }}>
           <Container 
                maxW='2xl' 

@@ -27,7 +27,7 @@ export function Level2MenuEng() {
   return (
      <div className='main' style={{
           height: '100vh',
-          overflow: 'hidden'
+          overflow: 'scroll'
         }}>
           <Container 
                maxW='2xl' 

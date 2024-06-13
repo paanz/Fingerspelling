@@ -32,7 +32,7 @@ export function HomeMY() {
     <div className='main'
                 style={{
                   height: '100vh',
-                  overflow: 'hidden'
+                  overflow: 'scroll'
                 }}>
         {/* <video className='homeBg' src={BgVideo} autoPlay loop muted /> */}
         {/* <div className='overlay'></div> */}

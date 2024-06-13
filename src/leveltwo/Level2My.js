@@ -163,7 +163,7 @@ function Kuiz() {
     <>
       <div style={{
         height: '100vh',
-        overflow: 'hidden',
+        overflow: 'scroll',
       }}>
         {showResults ? (
           <div className="results">

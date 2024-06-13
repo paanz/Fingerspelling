@@ -32,7 +32,7 @@ export function HomeEng() {
       <div className='main'
             style={{
               height: '100vh',
-              overflow: 'hidden'
+              overflow: 'scroll'
             }}>
         <Container className='homeContainer' maxW={'5xl'} rounded={'90px'}>
           <Stack
